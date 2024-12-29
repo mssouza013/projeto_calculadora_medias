@@ -3,8 +3,8 @@ const imgAprovado = '<img scr="./images/aprovado.png" alt="Emoji celebrando" />'
 const imgReprovado = '<img scr="./images/reprovado.png" alt="Emoji decepcionado" />';
 const atividades = [];
 const notas = [];
-const spanAprovado = 'span class="resultado aprovado>Aprovado</span>"'
-const spanReprovado = 'span class="resultado reprovado>Reprovado</span>"'
+const spanAprovado = '<span class="resultado aprovado">Aprovado</span>';
+const spanReprovado = '<span class="resultado reprovado">Reprovado</span>';
 const notaMinima = parseFloat(prompt("Digite a nota mínima:"));
 
 let linhas = '';
@@ -14,14 +14,14 @@ form.addEventListener('submit', function(e){
 
     adcionaLinha();
     atualizaTabela();
-    atualizaNotaFinal
+    calculaMediaFinal();
 });
 
 function adcionaLinha(){
     const inputNomeAtividade = document.getElementById('nome-atividade');
     const inputNotaAtividade = document.getElementById('nota-atividade');
 
-    if(atividades.includes(inputNomeAtividade.value)){
+    if (atividades.includes(inputNomeAtividade.value)){
         alert(`A atividade ${inputNomeAtividade.value} já foi inserida`);
     }else{   
         atividades.push(inputNomeAtividade.value);
